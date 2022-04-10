@@ -31,7 +31,7 @@ namespace CortexPE\Commando\constraint;
 
 
 use pocketmine\command\CommandSender;
-use pocketmine\player\Player;
+use pocketmine\Player;
 use pocketmine\utils\TextFormat;
 
 class InGameRequiredConstraint extends BaseConstraint {

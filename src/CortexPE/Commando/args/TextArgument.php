@@ -35,7 +35,7 @@ use pocketmine\network\mcpe\protocol\AvailableCommandsPacket;
 
 class TextArgument extends RawStringArgument {
 	public function getNetworkType(): int {
-		return AvailableCommandsPacket::ARG_TYPE_RAWTEXT;
+		return 0x2e;
 	}
 
 	public function getTypeName(): string {

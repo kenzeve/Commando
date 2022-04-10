@@ -31,11 +31,12 @@ namespace CortexPE\Commando\args;
 
 
 use pocketmine\command\CommandSender;
-use pocketmine\network\mcpe\protocol\types\command\CommandEnum;
+use pocketmine\network\mcpe\protocol\types\CommandEnum;
 use function array_keys;
 use function array_map;
 use function implode;
 use function preg_match;
+use function spl_object_hash;
 use function strtolower;
 
 abstract class StringEnumArgument extends BaseArgument {
@@ -44,7 +45,8 @@ abstract class StringEnumArgument extends BaseArgument {
 	public function __construct(string $name, bool $optional = false) {
 		parent::__construct($name, $optional);
 
-		$this->parameterData->enum = new CommandEnum("", $this->getEnumValues());
+		$this->parameterData->enum = new CommandEnum();
+		$this->parameterData->enum->enumValues = $this->getEnumValues();
 	}
 
 	public function getNetworkType(): int {

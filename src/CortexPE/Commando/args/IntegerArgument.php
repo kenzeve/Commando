@@ -36,7 +36,7 @@ use function preg_match;
 
 class IntegerArgument extends BaseArgument {
 	public function getNetworkType(): int {
-		return AvailableCommandsPacket::ARG_TYPE_INT;
+		return 0x01;
 	}
 
 	public function getTypeName(): string {
@@ -47,7 +47,7 @@ class IntegerArgument extends BaseArgument {
 		return (bool)preg_match("/^-?(?:\d+)$/", $testString);
 	}
 
-	public function parse(string $argument, CommandSender $sender) : int{
-		return (int) $argument;
+	public function parse(string $argument, CommandSender $sender) {
+		return (int)$argument;
 	}
 }

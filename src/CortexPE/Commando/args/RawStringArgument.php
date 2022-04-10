@@ -34,7 +34,7 @@ use pocketmine\network\mcpe\protocol\AvailableCommandsPacket;
 
 class RawStringArgument extends BaseArgument {
 	public function getNetworkType(): int {
-		return AvailableCommandsPacket::ARG_TYPE_STRING;
+		return 0x20;
 	}
 
 	public function getTypeName(): string {
@@ -45,7 +45,7 @@ class RawStringArgument extends BaseArgument {
 		return true;
 	}
 
-	public function parse(string $argument, CommandSender $sender) : string{
+	public function parse(string $argument, CommandSender $sender) {
 		return $argument;
 	}
 }

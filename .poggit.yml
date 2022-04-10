@@ -7,7 +7,4 @@ projects:
     type: library
     lint:
       phpstan: false
-    libs:
-      - src: Muqsit/SimplePacketHandler/SimplePacketHandler
-        version: ^0.1.0
 ...
